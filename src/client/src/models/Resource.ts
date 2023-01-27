@@ -1,0 +1,1 @@
+export type Resource = 'wood' | 'stone' | 'food' | 'superfood' | 'knowledge' | 'stormknowledge' | 'power' | 'stormpower';
