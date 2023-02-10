@@ -2,8 +2,8 @@ import { Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { GameState } from "../state/game";
 import { ObjectiveState } from "../state/objective";
+import { StoreState } from "../state/store";
 
 export interface ObjectiveViewProps extends ObjectiveState {
   dispatch: Dispatch
@@ -23,7 +23,7 @@ const ObjectiveView: React.FC<ObjectiveViewProps> = props => {
   );
 }
 
-const mapStateToProps = (state: GameState) => {
+const mapStateToProps = (state: StoreState) => {
   return {
     ...state.objectives
   };

@@ -1,9 +1,8 @@
-import { GuildName } from "./GuildName";
+import { GuildAction } from "./GuildAction";
 import { ResourceAmount } from "./ResourceAmount";
 import { ResourceSet } from "./ResourceSet";
 
 export interface Guild {
-  name: GuildName;
   productionRateCommon: number;
   productionRateRare: number;
   buildingCostCommon: ResourceSet;
@@ -12,4 +11,5 @@ export interface Guild {
   buildingCountRare: number;
   upgradeCostCommon: ResourceAmount;
   upgradeCostRare: ResourceAmount;
+  action: GuildAction;
 }

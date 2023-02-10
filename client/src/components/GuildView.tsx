@@ -10,10 +10,12 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { Guild } from "../models/Guild";
+import { GuildName } from "../models/GuildName";
 import { resourceSetToStrings } from "../models/ResourceSet";
 
 export interface GuildViewProps extends Guild
 {
+  name: GuildName;
   isActive: boolean;
 }
 

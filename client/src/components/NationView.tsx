@@ -5,8 +5,8 @@ import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { Dispatch } from "@reduxjs/toolkit";
 import { connect } from "react-redux";
 import { GuildView } from "./GuildView";
-import { GameState } from "../state/game";
 import { NationState } from "../state/nation";
+import { StoreState } from "../state/store";
 
 export interface NationViewProps extends NationState {
   dispatch: Dispatch
@@ -18,16 +18,16 @@ const NationView: React.FC<NationViewProps> = (props) => {
       <Box padding={4}>
         <Grid container spacing={2}>
           <Grid xs={12} sm={6} md={3}>
-            <GuildView {...props.guilds.Agriculture} isActive={props.activeGuild === 'Agriculture'}  />
+            <GuildView {...props.guilds.Agriculture} name='Agriculture' isActive={props.activeGuild === 'Agriculture'}  />
           </Grid>
           <Grid xs={12} sm={6} md={3}>
-            <GuildView {...props.guilds.Industry} isActive={props.activeGuild === 'Industry'} />
+            <GuildView {...props.guilds.Energy} name='Energy' isActive={props.activeGuild === 'Industry'} />
           </Grid>
           <Grid xs={12} sm={6} md={3}>
-            <GuildView {...props.guilds.Research} isActive={props.activeGuild === 'Research'} />
+            <GuildView {...props.guilds.Industry} name='Industry' isActive={props.activeGuild === 'Industry'} />
           </Grid>
           <Grid xs={12} sm={6} md={3}>
-            <GuildView {...props.guilds.Energy} isActive={props.activeGuild === 'Industry'} />
+            <GuildView {...props.guilds.Research} name='Research' isActive={props.activeGuild === 'Research'} />
           </Grid>
         </Grid>
         <Typography variant="h5" display="flex" justifyContent="center" paddingTop={4}>Resources</Typography>
@@ -70,7 +70,7 @@ const NationView: React.FC<NationViewProps> = (props) => {
   );
 };
 
-const mapStateToProps = (state: GameState) => {
+const mapStateToProps = (state: StoreState) => {
   return {
     ...state.nation
   }

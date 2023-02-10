@@ -16,7 +16,6 @@ const NationActions = {
 export type NationAction = ActionType<typeof NationActions>;
 
 const defaultAgricultureGuild: Guild  = {
-  name: "Agriculture",
   buildingCostCommon: {
     wood: 2,
     food: 1,
@@ -39,62 +38,10 @@ const defaultAgricultureGuild: Guild  = {
     resource: "knowledge",
     amount: 2,
   },
-};
-
-const defaultIndustryGuild: Guild = {
-  name: "Industry",
-  buildingCostCommon: {
-    wood: 2,
-    superfood: 1,
-    power: 1,
-  },
-  buildingCostRare: {
-    stone: 2,
-    superfood: 2,
-    stormpower: 2,
-  },
-  buildingCountCommon: 0,
-  buildingCountRare: 0,
-  productionRateCommon: 1,
-  productionRateRare: 1,
-  upgradeCostCommon: {
-    resource: "knowledge",
-    amount: 1,
-  },
-  upgradeCostRare: {
-    resource: "knowledge",
-    amount: 3,
-  },
-};
-
-const defaultResearchGuild: Guild = {
-  name: "Research",
-  buildingCostCommon: {
-    wood: 2,
-    food: 1,
-    stormpower: 2,
-  },
-  buildingCostRare: {
-    stone: 2,
-    food: 2,
-    stormpower: 4,
-  },
-  buildingCountCommon: 0,
-  buildingCountRare: 0,
-  productionRateCommon: 1,
-  productionRateRare: 1,
-  upgradeCostCommon: {
-    resource: "knowledge",
-    amount: 1,
-  },
-  upgradeCostRare: {
-    resource: "stormknowledge",
-    amount: 2,
-  },
+  action: "produceCommon"
 };
 
 const defaultEnergyGuild: Guild = {
-  name: "Energy",
   buildingCostCommon: {
     stone: 2,
     food: 1,
@@ -117,6 +64,59 @@ const defaultEnergyGuild: Guild = {
     resource: "stormknowledge",
     amount: 3,
   },
+  action: "produceCommon"
+};
+
+const defaultIndustryGuild: Guild = {
+  buildingCostCommon: {
+    wood: 2,
+    superfood: 1,
+    power: 1,
+  },
+  buildingCostRare: {
+    stone: 2,
+    superfood: 2,
+    stormpower: 2,
+  },
+  buildingCountCommon: 0,
+  buildingCountRare: 0,
+  productionRateCommon: 1,
+  productionRateRare: 1,
+  upgradeCostCommon: {
+    resource: "knowledge",
+    amount: 1,
+  },
+  upgradeCostRare: {
+    resource: "knowledge",
+    amount: 3,
+  },
+  action: "produceCommon"
+};
+
+const defaultResearchGuild: Guild = {
+  buildingCostCommon: {
+    wood: 2,
+    food: 1,
+    stormpower: 2,
+  },
+  buildingCostRare: {
+    stone: 2,
+    food: 2,
+    stormpower: 4,
+  },
+  buildingCountCommon: 0,
+  buildingCountRare: 0,
+  productionRateCommon: 1,
+  productionRateRare: 1,
+  upgradeCostCommon: {
+    resource: "knowledge",
+    amount: 1,
+  },
+  upgradeCostRare: {
+    resource: "stormknowledge",
+    amount: 2,
+  },
+  action: "produceCommon"
 };
 
 export type Guilds = {
