@@ -1,9 +1,11 @@
-name: Thundercloud Azure Functions
+name: Thundercloud API Azure Functions
 
 on:
   push:
     branches:
       - main
+    paths:
+      - api
   workflow_dispatch:
 
 env:

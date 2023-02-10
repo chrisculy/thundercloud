@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - pubsub
   workflow_dispatch:
 
 env:
