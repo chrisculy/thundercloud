@@ -1,20 +1,22 @@
+using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Extensions.WebPubSub;
 using Microsoft.Azure.WebPubSub.Common;
 using Microsoft.Extensions.Logging;
 
-namespace Thundercloud;
+namespace ThundercloudPubSub;
 
 public class PubSubFunctions
 {
 	public PubSubFunctions(ILoggerFactory loggerFactory)
 	{
-		_logger = loggerFactory.CreateLogger<Functions>();
+		_logger = loggerFactory.CreateLogger<PubSubFunctions>();
 	}
 
-	[Function("negotiate")]
+	[FunctionName("negotiate")]
 	public WebPubSubConnection Negotiate(
 		[HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest request,
 		[WebPubSubConnection(Hub = c_hubName, UserId = "{headers.x-ms-client-principal-name}")] WebPubSubConnection connection)
@@ -23,7 +25,7 @@ public class PubSubFunctions
 		return connection;
 	}
 
-	[Function("message")]
+	[FunctionName("message")]
 	public static async Task<UserEventResponse> Message(
 		[WebPubSubTrigger(c_hubName, WebPubSubEventType.User, "message")] UserEventRequest request,
 		BinaryData data,

@@ -3,9 +3,6 @@
 	"tasks": [
 		{
 			"label": "clean (functions)",
-			"options": {
-				"cwd": "${workspaceFolder}/api"
-			},
 			"command": "dotnet",
 			"args": [
 				"clean",
@@ -17,9 +14,6 @@
 		},
 		{
 			"label": "build (functions)",
-			"options": {
-				"cwd": "${workspaceFolder}/api"
-			},
 			"command": "dotnet",
 			"args": [
 				"build",
@@ -36,9 +30,6 @@
 		},
 		{
 			"label": "clean release (functions)",
-			"options": {
-				"cwd": "${workspaceFolder}/api"
-			},
 			"command": "dotnet",
 			"args": [
 				"clean",
@@ -52,9 +43,6 @@
 		},
 		{
 			"label": "publish (functions)",
-			"options": {
-				"cwd": "${workspaceFolder}/api"
-			},
 			"command": "dotnet",
 			"args": [
 				"publish",
@@ -70,9 +58,6 @@
 		{
 			"type": "func",
 			"dependsOn": "build (functions)",
-			"options": {
-				"cwd": "${workspaceFolder}/api/bin/Debug/net7.0"
-			},
 			"command": "host start",
 			"isBackground": true,
 			"problemMatcher": "$func-dotnet-watch"
