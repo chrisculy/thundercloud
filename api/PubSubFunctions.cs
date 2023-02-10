@@ -14,16 +14,16 @@ public class PubSubFunctions
 		_logger = loggerFactory.CreateLogger<Functions>();
 	}
 
-	[FunctionName("negotiate")]
+	[Function("negotiate")]
 	public WebPubSubConnection Negotiate(
-		[HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest request,
+		[HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest request,
 		[WebPubSubConnection(Hub = c_hubName, UserId = "{headers.x-ms-client-principal-name}")] WebPubSubConnection connection)
 	{
 		_logger.LogInformation("Connecting...");
 		return connection;
 	}
 
-	[FunctionName("message")]
+	[Function("message")]
 	public static async Task<UserEventResponse> Message(
 		[WebPubSubTrigger(c_hubName, WebPubSubEventType.User, "message")] UserEventRequest request,
 		BinaryData data,
