@@ -39,14 +39,14 @@
         // auth
         let login = document.querySelector("#login");
         let link = document.createElement('a');
-        link.href = `${window.location.origin}/.auth/login/aad?post_login_redirect_url=/api/index?authenticated=true`;
+        link.href = `${window.location.origin}/.auth/login/aad?post_login_redirect_url=${window.location.origin}/?authenticated=true`;
         link.text = "login";
         login.appendChild(link);
       }
       else {
         // negotiate
         let messages = document.querySelector('#messages');
-        let res = await fetch(`${window.location.origin}/api/negotiate`, {
+        let res = await fetch(`https://thundercloud-pubsub.azurewebsites.net/api/negotiate`, {
           credentials: "include"
         });
         let url = await res.json();
