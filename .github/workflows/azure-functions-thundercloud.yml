@@ -38,4 +38,4 @@ jobs:
           app-name: 'thundercloud'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BF4EDE19286E4E0E85A6B152FA28A327 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B16C983BCD2041EAB9995AB94231986D }}
